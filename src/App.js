@@ -1,37 +1,21 @@
-//--------setState執行異步---------//
-
 // 導入其它的模組
 import React, { useState } from "react";
 
-function App() {
-  // 呼叫useState勾子，設定初始化值為0
-  // 回傳一組getter(獲取值)和setter(設定值)陣列
-  const [total, setTotal] = useState(0);
+import MyButtonOne from "./components/MyButtonOne";
+import MyButtonTwo from "./components/MyButtonTwo";
 
-  // return 值即元件的 render 方法，只能有一個根元素進行render
-  // 多個元件需要用<>...</>(React.Fragment)包住
+function App(props) {
+  const [show, setShow] = useState(true);
+
   return (
     <>
-      <h1>{total}</h1>
-      <button
-        onClick={() => {
-          const newTotal = total + 1;
-          // setState/setXXXX 執行是異步的
-          setTotal(newTotal);
-          localStorage.setItem("total", newTotal);
-        }}
-      >
-        +1
-      </button>
-      <button
-        onClick={() => {
-          const newTotal = total - 1;
-          setTotal(newTotal);
-          localStorage.setItem("total", newTotal);
-        }}
-      >
-        -1
-      </button>
+      {/* <h1>0</h1> */}
+      <MyButtonOne title="復活吧~" clickMethod={() => setShow(true)} />
+      {show ? (
+        <MyButtonTwo title="我不要活了" clickMethod={() => setShow(false)} />
+      ) : (
+        ""
+      )}
     </>
   );
 }
