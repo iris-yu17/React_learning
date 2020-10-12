@@ -9,8 +9,10 @@ import AppClass from "./components/AppClass";
 function App() {
   return (
     <>
-      <AppFuncion />
-      <AppClass />
+      {/* 使用類似HTML標記的方式來放置元件要呈現(渲染)的位置 */}
+      {/* 使用類似HTML給定屬性值(html屬性:attribute, React屬性叫props)的方式來傳遞資料到子女元件中 */}
+      <AppFuncion title="函式型元件" />
+      <AppClass title="類別型元件" />
     </>
   );
 }
