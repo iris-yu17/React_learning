@@ -2,7 +2,7 @@
 import React from "react";
 
 // extends: 繼承React裡的Component類別
-class App extends React.Component {
+class AppClass extends React.Component {
   // 建構式: 產生實體初始值
   constructor() {
     // 建構式第一行必要呼叫super
@@ -33,4 +33,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default AppClass;

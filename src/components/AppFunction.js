@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 // 函式型元件，用return來render
 // 開發者自訂的元件開頭英文大寫
-function App() {
+function AppFunction() {
   // 解構賦值
   // 宣告一個新的 state(狀態) 變數，名稱為 "total"
   // 用useState()給定初始值
@@ -25,4 +25,4 @@ function App() {
   );
 }
 // 輸出元件(函式)
-export default App;
+export default AppFunction;
