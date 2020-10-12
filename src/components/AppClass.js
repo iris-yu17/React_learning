@@ -21,6 +21,7 @@ class AppClass extends React.Component {
       <>
         <h1>{this.state.total}</h1>
         {/* setState: class型元件的內建方法 */}
+        {/* setState: 唯一可以改變state的方法 */}
         {/* 讓total = this.state.total + 1 */}
         <button onClick={() => this.setState({ total: this.state.total + 1 })}>
           +1
