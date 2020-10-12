@@ -1,24 +1,19 @@
 // 導入其它的模組
 import React, { useState } from "react";
+import ConvertButton from "./components/ConvertButton";
 
-import MyButtonOne from "./components/MyButtonOne";
-import MyButtonTwo from "./components/MyButtonTwo";
 
-function App(props) {
+function CurrencyConverter() {
   const [show, setShow] = useState(true);
 
   return (
     <>
-      {/* <h1>0</h1> */}
-      <MyButtonOne title="復活吧~" clickMethod={() => setShow(true)} />
-      {show ? (
-        <MyButtonTwo title="我不要活了" clickMethod={() => setShow(false)} />
-      ) : (
-        ""
-      )}
+
+    <ConvertButton title="convert" clickMethod={() => setShow(true)} />
+
     </>
   );
 }
 
 // 輸出元件(函式)
-export default App;
+export default CurrencyConverter;
