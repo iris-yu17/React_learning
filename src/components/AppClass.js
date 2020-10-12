@@ -20,7 +20,7 @@ class AppClass extends React.Component {
     return (
       <>
         {/* class型會自動得到props */}
-        <h1>{this.props.title}</h1>
+        <h1>{this.props.title123}</h1>
 
         {/* 呈現狀態值要使用this.state.total */}
         <h1>{this.state.total}</h1>
