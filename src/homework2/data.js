@@ -407,6 +407,8 @@ const data = {
 // getOwnPropertyNames() method returns an array of all properties
 // 輸出三個陣列
 export const countries = Object.getOwnPropertyNames(data);
+// Array.prototype.map(): 會建立一個新的陣列，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。
+// map(function callback( currentValue[, index[, array]])
 export const townships = countries.map((v, i, array) =>
   Object.getOwnPropertyNames(data[array[i]])
 );
