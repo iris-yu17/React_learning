@@ -1,4 +1,4 @@
-// ------美金轉新台應用完成-單元件版本------ App_currencyConvert_singleComponent//
+// ---------bmi calculator--------- bmi//
 
 // 導入其它的模組
 import React, { useState } from "react";
@@ -7,28 +7,22 @@ function App(props) {
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [bmi, setBmi] = useState(0);
-
-  // 注意，這種數字運算會去掉小數然後四捨五入，所以不夠精準，只作範例用
-  //   const usd2Twd = (usd) => (usd * 28.53).toFixed(2);
+  const [comment, setComment] = useState("");
 
   return (
     <>
-      height：
+      Your height (cm)：
       <input
         type="text"
         value={height}
         onChange={(e) => {
           // 因setXXX 會異步執行，先得到更動後的值
           const newHeight = e.target.value;
-
-          // 再設定兩個需要設定的狀態值
           setHeight(newHeight);
-          //   setweight(twd2Usd(newHeight));
-          setBmi();
         }}
       />
       <br />
-      weight：
+      Your weight (kg)：
       <input
         type="text"
         value={weight}
@@ -36,18 +30,28 @@ function App(props) {
           // 先得到更動後的值
           const newWeight = e.target.value;
           setWeight(newWeight);
-          //   setweight(twd2Usd(newWeight));
-          setBmi();
         }}
       />
       <br />
-      BMI:<span>{bmi}</span>
+      Your BMI:<span>{bmi}</span>
+      <br />
+      comment:<span>{comment}</span>
       <br />
       <button
         onClick={() => {
           //   const bmi = Math.pow(height, 2);
           const bmi = weight / Math.pow(height / 100, 2);
           setBmi(bmi);
+
+          if (bmi < 18.5) {
+            setComment(" underweight");
+          } else if (18.5 < bmi < 24.9) {
+            setComment(" normal weight");
+          } else if (25 < bmi < 29.9) {
+            setComment(" overweight");
+          } else {
+            setComment(" obesity");
+          }
         }}
       >
         calculate

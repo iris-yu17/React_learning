@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+// -----bmi calculator (eddie's version)------//
+
+import React, { useState } from "react";
 
 function BMI(props) {
-  const [height, setHeight] = useState('')
-  const [weight, setWeight] = useState('')
-  const [bmi, setBmi] = useState('')
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [bmi, setBmi] = useState("");
 
   const calcBMI = (h, w) =>
-    h > 0 && w > 0 ? (w / Math.pow(h / 100, 2)).toFixed(1) : 0
+    h > 0 && w > 0 ? (w / Math.pow(h / 100, 2)).toFixed(1) : 0;
 
   return (
     <>
@@ -30,7 +32,7 @@ function BMI(props) {
       <br />
       BMI：{bmi}
     </>
-  )
+  );
 }
 
-export default BMI
+export default BMI;
