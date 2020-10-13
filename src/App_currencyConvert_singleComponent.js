@@ -1,3 +1,5 @@
+// ------美金轉新台應用完成-單元件版本------ //
+
 // 導入其它的模組
 import React, { useState } from "react";
 
