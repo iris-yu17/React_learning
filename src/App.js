@@ -40,18 +40,26 @@ function App(props) {
       <button
         onClick={() => {
           //   const bmi = Math.pow(height, 2);
-          const bmi = weight / Math.pow(height / 100, 2);
+          const bmi = (weight / Math.pow(height / 100, 2)).toFixed(2);
           setBmi(bmi);
 
-          if (bmi < 18.5) {
-            setComment(" underweight");
-          } else if (18.5 < bmi < 24.9) {
-            setComment(" normal weight");
-          } else if (25 < bmi < 29.9) {
-            setComment(" overweight");
-          } else {
-            setComment(" obesity");
-          }
+          bmi < 18.5
+            ? setComment(" underweight")
+            : 18.5 < bmi < 24.9
+            ? setComment(" normal weight")
+            : 25 < bmi < 29.9
+            ? setComment(" overweight")
+            : setComment(" obesity");
+
+          // if (bmi < 18.5) {
+          //   setComment(" underweight");
+          // } else if (18.5 < bmi < 24.9) {
+          //   setComment(" normal weight");
+          // } else if (25 < bmi < 29.9) {
+          //   setComment(" overweight");
+          // } else {
+          //   setComment(" obesity");
+          // }
         }}
       >
         calculate

@@ -37,7 +37,7 @@ function TWZipCode(props) {
         }}
       >
         <option value={-1}>選擇區域</option>
-        {/* &&: if true就做後面的是，否則就不做，也可用三元運算子 */}
+        {/* &&: if true就做後面的事，否則就不做，也可用三元運算子 */}
         {country > -1 &&
           townships[country].map((v, i) => (
             <option key={i} value={i}>
