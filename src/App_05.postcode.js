@@ -1,13 +1,14 @@
-//  ------ 時鐘 ------- ClockFunction //
+// ------ Homework: postcode ------- //
+// App_05.postcode
 
 // 導入其它的模組
 import React, { useState } from "react";
-import ClockFunction from "./components/ClockFunction";
+import TWZipCode from "./homework2/TWZipCode";
 
 function App(props) {
   return (
     <>
-      <ClockFunction />
+      <TWZipCode />
     </>
   );
 }

@@ -1,4 +1,5 @@
-// ---------bmi calculator--------- bmi//
+// ---------bmi calculator--------- //
+// App_06.bmi
 
 // 導入其它的模組
 import React, { useState } from "react";

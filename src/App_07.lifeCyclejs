@@ -1,4 +1,5 @@
-//  ------ 生命週期 ------ App_lifeCycle.js//
+//  ------ 生命週期 ------ //
+// App_07.lifeCycle
 
 // 導入其它的模組
 import React, { useState } from "react";

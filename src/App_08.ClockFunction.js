@@ -1,13 +1,14 @@
-//  ------ 時鐘 ------- ClockClass //
+//  ------ 時鐘 ------- //
+// App_08.ClockFunction
 
 // 導入其它的模組
 import React, { useState } from "react";
-import ClockClass from "./components/ClockClass";
+import ClockFunction from "./components/ClockFunction";
 
 function App(props) {
   return (
     <>
-      <ClockClass />
+      <ClockFunction />
     </>
   );
 }
