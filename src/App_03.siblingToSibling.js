@@ -1,4 +1,4 @@
-// --------子女元件之間互傳資料-------- siblingToSibling //
+// --------子女元件之間互傳資料------ // App_03.siblingToSibling
 //  steps:
 //  1.parent send setXXX to child2
 //  2.child2 send data to parent via setXXX

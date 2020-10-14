@@ -1,3 +1,5 @@
+// ------函式型元件-------- //
+
 // 從node_modules的"react"導入React和useState函式庫
 // 有導入React才能用jsx語法
 // jsx: react建立虛擬dom的語法

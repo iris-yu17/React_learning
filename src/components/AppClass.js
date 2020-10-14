@@ -1,3 +1,5 @@
+// -------類別型元件------ //
+
 // 導入react函式庫
 import React from "react";
 

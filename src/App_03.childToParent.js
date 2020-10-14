@@ -1,4 +1,4 @@
-// --------子女元件傳資料給父母--------  //
+// --------子女元件傳資料給父母--------  // App_03.childToParent
 
 import React, { useState } from "react";
 
@@ -12,7 +12,7 @@ function App(props) {
     <>
       <h1>{num}</h1>
       {/* 父母元件利用props傳給子女，準備要接收資料的函式setNum */}
-      <ChildToParent title="傳資料給父母(App)" setNum={setNum} />
+      <ChildToParent title="傳資料給父母(App)" setNum123={setNum} />
     </>
   );
 }

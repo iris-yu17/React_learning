@@ -1,4 +1,5 @@
-// ------美金轉新台應用完成-單元件版本------ App_currencyConvert_singleComponent//
+// ------美金轉新台應用完成-單元件版本------//
+// App_04.currencyConvert_singleComponent
 
 // 導入其它的模組
 import React, { useState } from "react";
@@ -31,9 +32,9 @@ function App(props) {
       <input
         type="text"
         value={usd}
-        onChange={(e) => {
+        onChange={(event) => {
           // 先得到更動後的值
-          const newUsd = e.target.value;
+          const newUsd = event.target.value;
           setUsd(newUsd);
           setTwd(usd2Twd(newUsd));
         }}

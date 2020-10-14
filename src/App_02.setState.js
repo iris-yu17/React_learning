@@ -1,4 +1,4 @@
-//--------setState執行異步---------//
+//--------setState執行異步---------// App_02.setState
 
 // 導入其它的模組
 import React, { useState } from "react";

@@ -7,9 +7,9 @@ function MoneyInput(props) {
       <input
         type="text"
         value={props.money}
-        onChange={(e) => {
+        onChange={(event) => {
           // 轉成數字進入state中(用+轉成數字)
-          props.setMoney(+e.target.value);
+          props.setMoney(+event.target.value);
         }}
       />
     </>

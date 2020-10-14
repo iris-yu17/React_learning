@@ -6,7 +6,7 @@ function ChildOne(props) {
     <>
       {/* 呈現由父母元件來的資料 */}
       <h1>{props.text}</h1>
-      <button onClick={props.onClick}>{props.title}</button>
+      {props.title}
     </>
   );
 }

@@ -7,7 +7,7 @@ function ChildToParent(props) {
   return (
     <>
       {/* 子女元件利用父母元件傳給他的setNum，進行傳遞自己的資料 */}
-      <button onClick={() => props.setNum(innerValue)}>{props.title}</button>
+      <button onClick={() => props.setNum123(innerValue)}>{props.title}</button>
     </>
   );
 }

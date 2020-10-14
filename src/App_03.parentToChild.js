@@ -1,4 +1,4 @@
-// --------傳遞資料到子女元件中--------  //
+// --------傳遞資料到子女元件中--------  // App_03.parentToChild
 
 // 從node_modules的"react"導入React和useState函式庫
 // 在node_modules裡面就不需要寫路徑
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       {/* 使用類似HTML標記的方式來放置元件要呈現(渲染)的位置 */}
-      {/* 使用類似HTML給定屬性值(html屬性:attribute, React有個props屬性)的方式來傳遞資料到子女元件中 */}
+      {/* 使用類似HTML給定屬性值(props)的方式來傳遞資料到子女元件中 */}
       <AppFuncion title123="函式型元件" />
       <AppClass title123="類別型元件" />
     </>
