@@ -9,8 +9,8 @@ import LifeCycleClass from "./components/LifeCycleClass";
 function App(props) {
   return (
     <>
-      <LifeCycleClass />
-      {/* <LifeCycleFunction /> */}
+      {/* <LifeCycleClass /> */}
+      <LifeCycleFunction />
     </>
   );
 }

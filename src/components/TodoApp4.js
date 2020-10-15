@@ -1,9 +1,9 @@
-// ------切換待辨事項的完成狀態------ //
-// TodoApp3
+// ------刪除功能------ //
+// TodoApp4
 
 import React, { useState, useEffect } from "react";
 
-function TodoApp3(props) {
+function TodoApp4(props) {
   const [todoInput, setTodoInput] = useState("123");
   // 將每個待辨事項改為物件值
   // { id, text: string, completed: bool }
@@ -18,11 +18,8 @@ function TodoApp3(props) {
   const handleCompleted = (id) => {
     // 先複製一個新的todos陣列
     const newTodos = [...todos];
-    console.log(newTodos)
 
     // 利用id值尋找對應的item的索引值
-    // findIndex會回傳符合條件的項目的index，若沒有符合會回傳-1
-    // if item.id === id  findIndex會回傳這個item的索引值
     const todoItemIndex = newTodos.findIndex((item) => item.id === id);
 
     // 如果尋找到的索引值不是-1時，代表有找到索引值
@@ -33,6 +30,17 @@ function TodoApp3(props) {
       // 設定回原本的todos
       setTodos(newTodos);
     }
+  };
+
+  const handleDelete = (id) => {
+    const newTodos = [...todos];
+    console.log(id);
+    const todoItemIndex = newTodos.findIndex((item) => item.id === id);
+
+    if (todoItemIndex !== -1) {
+      newTodos.splice(todoItemIndex, 1);
+    }
+    setTodos(newTodos);
   };
 
   return (
@@ -79,6 +87,8 @@ function TodoApp3(props) {
                 onChange={() => handleCompleted(item.id)}
               />
               <del>{item.text}</del>
+              <button className="btn btn-primary" onClick={() => handleDelete(item.id)}>delete</button>
+           
             </li>
           ) : (
             <li key={item.text}>
@@ -96,4 +106,4 @@ function TodoApp3(props) {
   );
 }
 
-export default TodoApp3;
+export default TodoApp4;

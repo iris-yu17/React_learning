@@ -33,9 +33,9 @@ function TodoApp(props) {
       <ul>
         {/* Array.prototype.map():會建立一個新的陣列，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。 */}
         {/* map(function callback( currentValue[, index[, array]]) */}
-        {todos.map((value123, index) => {
+        {todos.map((value123, index123) => {
           //react有map就要有key
-          return <li key={index}>{value123}</li>;
+          return <li key={index123}>{value123}</li>;
         })}
       </ul>
     </>

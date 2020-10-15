@@ -2,9 +2,6 @@
 import React, { useState, useEffect } from "react";
 
 function LifeCycleFunction(props) {
-  // 呼叫useState勾子，設定初始化值為0
-  // 回傳一組getter(獲取值)和setter(設定值)陣列
-  const [total, setTotal] = useState(0);
 
   // componentDidMount
   useEffect(() => {
