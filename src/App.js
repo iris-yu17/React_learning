@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
-import TodoApp from "./components/TodoApp";
+import TodoApp3 from "./components/TodoApp3";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <MyNavbar />
       <main className="flex-shrink-0">
         <div className="container">
-          <TodoApp />
+          <TodoApp3 />
         </div>
       </main>
       <MyFooter />
