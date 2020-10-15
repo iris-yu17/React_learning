@@ -10,7 +10,7 @@ function LifeCycleFunction(props) {
   useEffect(() => {
     console.log("component did mount");
     return () => {
-      // componentWillUnmount是useEffect得回傳值
+      // componentWillUnmount是useEffect的回傳值
       console.log("component will unmount");
     };
   }, []);

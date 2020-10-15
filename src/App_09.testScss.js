@@ -5,19 +5,49 @@
 import React, { useState } from "react";
 import ClockFunction from "./components/ClockFunction";
 
+// HTML碼轉成JSX語法注意事項(bootstrap)
+// 1.單一行的結尾必須要是/>
+// 2.class要換成className
+// 3.for要換成htmlFor
+// 4.style要變成js的物件值(雙花括號)
 function App(props) {
   return (
     <>
-      <ClockFunction />
-      <div class="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
-      </div>
-      <div class="alert alert-secondary" role="alert">
-        A simple secondary alert—check it out!
-      </div>
-      <div class="alert alert-success" role="alert">
-        A simple success alert—check it out!
-      </div>
+      <form>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <small id="emailHelp" className="form-text text-muted">
+            We'll never share your email with anyone else.
+          </small>
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            className="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div className="form-group form-check">
+          <input
+            type="checkbox"
+            className="form-check-input"
+            id="exampleCheck1"
+          />
+          <label className="form-check-label" htmlFor="exampleCheck1">
+            Check me out
+          </label>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
     </>
   );
 }
