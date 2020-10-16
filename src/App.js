@@ -4,21 +4,21 @@
 import React, { useState, useEffect } from "react";
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
+import MainContent from "./components/MainContent";
 // import TodoApp1 from "./components/TodoApp1";
 // import TodoApp2 from "./components/TodoApp2";
 // import TodoApp3 from "./components/TodoApp3";
-import TodoApp4 from "./components/TodoApp4";
-
+// import TodoApp4 from "./components/TodoApp4";
+// import TodoApp5 from "./components/TodoApp5";
+import TodoApp6 from "./components/TodoApp6";
 
 function App() {
   return (
     <>
       <MyNavbar />
-      <main className="flex-shrink-0">
-        <div className="container">
-          <TodoApp4 />
-        </div>
-      </main>
+      <MainContent>
+        <TodoApp6 />
+      </MainContent>
       <MyFooter />
     </>
   );

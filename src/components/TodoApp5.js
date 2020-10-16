@@ -1,20 +1,18 @@
-// ------刪除功能------ // iris's version
-// TodoApp4
+// ------刪除功能------ // eddy's version
+// TodoApp5
 
 import React, { useState, useEffect } from "react";
 
-function TodoApp4(props) {
-  const [todoInput, setTodoInput] = useState("123");
+function TodoApp5(props) {
+  const [todoInput, setTodoInput] = useState("");
   // 將每個待辨事項改為物件值
   // { id, text: string, completed: bool }
   const [todos, setTodos] = useState([
-    // 因index會變動，設id值
     { id: 1, text: "買iphone 12", completed: false },
     { id: 2, text: "學好react", completed: true },
   ]);
 
   // 利用id值尋找對應的item的索引值，然後改變completed值
-  // react要先複製一個新的陣列，修改後，再用setXXX設定回去
   const handleCompleted = (id) => {
     // 先複製一個新的todos陣列
     const newTodos = [...todos];
@@ -32,14 +30,13 @@ function TodoApp4(props) {
     }
   };
 
-  const handleDelete = (id) => {
-    const newTodos = [...todos];
-    console.log(id);
-    const todoItemIndex = newTodos.findIndex((item) => item.id === id);
+  // 利用id值尋找對應的item的索引值，然後移出陣列
+  const handleDelete = (id123) => {
+    console.log(id123);
+    //建立一個新的陣列，其中不包含要被移除的項目(用filter)
+    const newTodos = todos.filter((item, index) => item.id !== id123);
 
-    if (todoItemIndex !== -1) {
-      newTodos.splice(todoItemIndex, 1);
-    }
+    // 設定回原本的todos
     setTodos(newTodos);
   };
 
@@ -74,7 +71,6 @@ function TodoApp4(props) {
       />
       <hr />
       <ul>
-        {/* map(function callback( currentValue[, index[, array]]) */}
         {/* map使用時通常子元素會要求唯一key值(id值)  */}
         {/* 這裡用id作為key值  */}
         {/* 依照每個項目的completed來控制呈現的樣子  */}
@@ -87,12 +83,7 @@ function TodoApp4(props) {
                 onChange={() => handleCompleted(item.id)}
               />
               <del>{item.text}</del>
-              <button
-                className="btn btn-primary"
-                onClick={() => handleDelete(item.id)}
-              >
-                delete
-              </button>
+              <button onClick={() => handleDelete(item.id)}>刪除</button>
             </li>
           ) : (
             <li key={item.text}>
@@ -102,12 +93,7 @@ function TodoApp4(props) {
                 onChange={() => handleCompleted(item.id)}
               />
               {item.text}
-              <button
-                className="btn btn-primary"
-                onClick={() => handleDelete(item.id)}
-              >
-                delete
-              </button>
+              <button onClick={() => handleDelete(item.id)}>刪除</button>
             </li>
           )
         )}
@@ -116,4 +102,4 @@ function TodoApp4(props) {
   );
 }
 
-export default TodoApp4;
+export default TodoApp5;
