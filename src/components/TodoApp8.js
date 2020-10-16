@@ -1,17 +1,19 @@
-// ------增新編輯功能------ //
-// TodoApp7
+// ------顯示已完成/未完成項目------ //
+// TodoApp8
 
 import React, { useState, useEffect } from "react";
 import TodoAddForm from "./todo/TodoAddForm";
 import TodoList from "./todo/TodoList";
 
-function TodoApp7(props) {
+function TodoApp8(props) {
   const [todoInput, setTodoInput] = useState("");
   // 將每個待辨事項改為物件值
   // { id, text: string, completed: bool, edited: bool }
   const [todos, setTodos] = useState([
     { id: 1, text: "買iphone 12", completed: false, edited: false },
     { id: 2, text: "學好react", completed: true, edited: false },
+    { id: 3, text: "買牛奶", completed: false, edited: false },
+    { id: 4, text: "買餅乾", completed: true, edited: false },
   ]);
 
   // 利用id值尋找對應的item的索引值，然後改變edited值
@@ -80,6 +82,11 @@ function TodoApp7(props) {
     setTodos(newTodos);
   };
 
+  const showList = (completed) => {
+    const newTodos = todos.filter((item, index) => completed === false);
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <h1 className="mt-5">範例：待辨事項</h1>
@@ -90,6 +97,7 @@ function TodoApp7(props) {
         setTodos={setTodos}
       />
       <hr />
+
       <TodoList
         todos={todos}
         handleEditedToggle={handleEditedToggle}
@@ -101,4 +109,4 @@ function TodoApp7(props) {
   );
 }
 
-export default TodoApp7;
+export default TodoApp8;
