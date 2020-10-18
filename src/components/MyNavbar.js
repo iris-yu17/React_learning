@@ -8,6 +8,9 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 
+// 引入才可以用link
+import { Link, Switch } from "react-router-dom";
+
 function MyNavbar(props) {
   return (
     <>
@@ -22,8 +25,8 @@ function MyNavbar(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#features"><Link to="/">home</Link></Nav.Link>
+            <Nav.Link href="#pricing"><Link to="/todo">todo</Link></Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -37,9 +40,9 @@ function MyNavbar(props) {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link href="#deets"><Link to="/product">product</Link></Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-              Dank memes
+            <Link to="/about">about</Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
