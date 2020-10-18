@@ -87,6 +87,7 @@ function TodoApp4(props) {
                 onChange={() => handleCompleted(item.id)}
               />
               <del>{item.text}</del>
+
               <button
                 className="btn btn-primary"
                 onClick={() => handleDelete(item.id)}
@@ -102,6 +103,7 @@ function TodoApp4(props) {
                 onChange={() => handleCompleted(item.id)}
               />
               {item.text}
+
               <button
                 className="btn btn-primary"
                 onClick={() => handleDelete(item.id)}

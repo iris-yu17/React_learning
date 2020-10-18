@@ -11,6 +11,7 @@ function TodoList(props) {
     handleDelete,
     handleEditedToggle,
     handleEditedSave,
+    viewFilter,
   } = props;
 
   return (
@@ -20,8 +21,15 @@ function TodoList(props) {
         {/* 這裡用id作為key值  */}
         {/* 依照每個項目的completed來控制呈現的樣子  */}
         {/* key要寫在最接近map的子項目，目前是改為TodoItem */}
-        {todos.map((item, index) =>
-          item.edited ? (
+
+        {todos.map((item, index) => {
+
+          // 0=all, 1 = (view completed = true), 2=(view completed =false)
+          if (viewFilter === 1 && !item.completed) return <></>;
+
+          if (viewFilter === 2 && item.completed) return <></>;
+
+          return item.edited ? (
             <TodoItemEditForm
               key={item.id}
               id={item.id}
@@ -41,8 +49,8 @@ function TodoList(props) {
               //   deleteMethod={() => handleDelete(item.id)}
               editedToggleMethod={() => handleEditedToggle(item.id)}
             />
-          )
-        )}
+          );
+        })}
       </ul>
     </>
   );

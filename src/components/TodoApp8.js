@@ -1,4 +1,5 @@
 // ------顯示已完成/未完成項目------ //
+// 用viewfilter狀態切換todolist
 // TodoApp8
 
 import React, { useState, useEffect } from "react";
@@ -7,6 +8,8 @@ import TodoList from "./todo/TodoList";
 
 function TodoApp8(props) {
   const [todoInput, setTodoInput] = useState("");
+  // 0=all, 1= (view completed = true), 2=(view completed =false)
+  const [viewFilter, setViewFilter] = useState(0)
   // 將每個待辨事項改為物件值
   // { id, text: string, completed: bool, edited: bool }
   const [todos, setTodos] = useState([
@@ -97,13 +100,17 @@ function TodoApp8(props) {
         setTodos={setTodos}
       />
       <hr />
-
+      <button onClick={() => setViewFilter(0)}>全部</button>{" "}
+      <button onClick={() => setViewFilter(1)}>已完成</button>{" "}
+      <button onClick={() => setViewFilter(2)}>未完成</button> 
+      <hr />
       <TodoList
         todos={todos}
         handleEditedToggle={handleEditedToggle}
         handleCompleted={handleCompleted}
         handleDelete={handleDelete}
         handleEditedSave={handleEditedSave}
+        viewFilter={viewFilter}
       />
     </>
   );
