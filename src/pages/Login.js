@@ -13,7 +13,13 @@ function Login(props) {
     account = document.querySelector("#account").value;
     password = document.querySelector("#password").value;
 
-    // if account = registerredData
+    if (
+      (account =
+        registerredData.account && password === registerredData.password)
+    ) {
+      alert("yes");
+    }
+    return;
   };
   return (
     <>
