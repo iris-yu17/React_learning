@@ -42,6 +42,7 @@ function Counter(props) {
 
     const request = new Request(url, {
       method: "PUT",
+      // 送資料到server要用body
       body: JSON.stringify(newTotal),
       headers: new Headers({
         Accept: "application/json",
