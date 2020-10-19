@@ -3,11 +3,11 @@ import Breadcrumb from "../components/Breadcrumb";
 import { Redirect } from "react-router-dom";
 
 // 擴充屬性的2個方法
-// 1.用HOC(higher-orer component)
-// 用withRouter來擴充props，得到3個屬性(match history, location)
+// 1.用HOC(higher-orer component)  class,function型元件都可用
+// 用withRouter來擴充props，得到3個屬性(match, history, location)
 // import { Link, Switch, withRouter } from "react-router-dom";
 
-// 2.用勾子
+// 2.用勾子  function型元件才可用
 import { Link, Switch, useParams } from "react-router-dom";
 
 function Product(props) {
@@ -26,7 +26,7 @@ function Product(props) {
       <Breadcrumb />
       {/* 1.用HOC(higher-orer component) */}
       {/* <h3>{props.match.params.id}</h3> */}
-      {/* f2.用勾子 */}
+      {/* 2.用勾子 */}
       {/* 參數名字看當初App.js的product route是定義甚麼 */}
       <h3>{id1234}</h3>
       <h3>目前會員狀態：{isAuth ? "登入" : "登出"}</h3>

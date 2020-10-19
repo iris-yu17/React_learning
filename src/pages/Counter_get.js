@@ -1,3 +1,4 @@
+// Counter_get
 import React, { useState, useEffect } from "react";
 
 function Counter(props) {
@@ -22,7 +23,7 @@ function Counter(props) {
     // 得到response
     const response = await fetch(request);
     console.log(response);
-    // 得到response後, 用json()解開 (可以透過 blob(), json(), text() 轉成可用的資訊)
+    // 得到response後, 用json()解開 (可以透過 blob(), json(), text() 轉成可用的資訊，參考以下)
     // https://wcc723.github.io/javascript/2017/12/28/javascript-fetch/
     // https://stackoverflow.com/questions/43654224/difference-between-json-parse-and-json-in-javasscript
     const data = await response.json();
@@ -36,6 +37,7 @@ function Counter(props) {
     getTotalFromServer();
   }, []);
 
+  // 條件觸發放第二個參數(total改變時...)
   // 每次total資料有改變，2秒後關起載入指示
   useEffect(() => {
     setTimeout(() => setDataLoading(false), 2000);
