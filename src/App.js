@@ -1,56 +1,54 @@
 // ------todo_list------  //
-// App_11.router
-// App元件功能一: 組合各元件，變成一個頁面
-// App元件功能二: 組合所有頁面
-// App頁面通常專門用來放路由器(router)
+// App_11.withRouter
 
 import React, { useState, useEffect } from "react";
+
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 import MainContent from "./components/MainContent";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
 import TodoAppPage from "./pages/TodoAppPage";
 import Home from "./pages/Home";
-import Product from "./pages/Product";
 import About from "./pages/About";
+import Product from "./pages/Product";
+import NotFoundPage from "./pages/NotFoundPage";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
-function App() { 
-  // todos, setTodos 傳到 TodoAppPage 再傳到 TodoApp8
-  // const [todos, setTodos] = useState([
-  //   { id: 1, text: "買iphone 12", completed: false, edited: false },
-  //   { id: 2, text: "學好react", completed: true, edited: false },
-  //   { id: 3, text: "買牛奶", completed: false, edited: false },
-  //   { id: 4, text: "買餅乾", completed: true, edited: false },
-  // ]);
-
+function App() {
+  const [todos, setTodos] = useState([]);
+  // 會員狀態放在App頁才能保持狀態，並讓下面所有頁面都能使用此狀態
+  const [isAuth, setIsAuth] = useState(false);
 
   return (
     <Router>
       <>
         <MyNavbar />
-        {/* MainContent要包住switch */}
         <MainContent>
-          {/* <Link to="/">Home</Link>
-        <Link to="/about">About</Link> */}
-          {/* 路徑寫在switch(路由表) */}
-          {/* 每新增一個頁面，就要到路由表來註冊 */}
           <Switch>
-               {/* 舊寫法 */}
-            <Route exact path="/" component={Home} />
-            <Route path="/todo" component={TodoAppPage} />
-
-            {/* 新寫法 */}
-            <Route exact path="/">
+            <Route path="/" exact>
               <Home />
             </Route>
             <Route path="/todo">
-              {/* <TodoAppPage todos={todos} setTodos={setTodos}/> */}
+              <TodoAppPage todos={todos} setTodos={setTodos} />
             </Route>
-            <Route exact path="/about">
+            <Route path="/about">
               <About />
             </Route>
-            <Route exact path="/product">
-              <Product />
+            <Route path="/login">
+              <Login isAuth={isAuth} setIsAuth={setIsAuth} />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            {/* 定義參數值，?表示可有可無 */}
+            <Route path="/product/:id1234?">
+              <Product isAuth={isAuth} />
+            </Route>
+            {/* 404頁面，要放在路由表最後一個 */}
+            <Route path="*">
+              <NotFoundPage />
             </Route>
           </Switch>
         </MainContent>

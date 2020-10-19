@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link, Switch } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 
-function About(props) {
+function Register(props) {
   return (
     <>
-      <h1>About</h1>
-      <Breadcrumb />
+      <h1>Register</h1>
     </>
   );
 }
 
-export default About;
+export default Register;
